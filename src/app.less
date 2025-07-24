@@ -1,17 +1,178 @@
 // 日系清新风格全局配色变量
-@main-bg: #f7f8fa;
-@main-accent: #a7d8c7;
-@main-pink: #f7cac9;
-@main-yellow: #fff6e5;
-@main-green: #b7e5c0;
-@main-blue: #b5d0e6;
-@main-brown: #bfae9e;
-@main-text: #5c5c5c;
-@main-title: #7d8c8c;
-@main-white: #fff;
+@color-bg: #f7f8fa;
+@color-accent: #a7d8c7;
+@color-pink: #f7cac9;
+@color-yellow: #fff6e5;
+@color-green: #b7e5c0;
+@color-blue: #b5d0e6;
+@color-brown: #bfae9e;
+@color-text: #5c5c5c;
+@color-title: #7d8c8c;
+@color-white: #fff;
+
+// 全局留白
+@space-xs: 4px;
+@space-sm: 8px;
+@space-md: 16px;
+@space-lg: 24px;
+@space-xl: 32px;
+
+// 按钮
+@btn-radius: 18px;
+@btn-padding: 0 16px;
+@btn-font-size: 15px;
+@btn-shadow: 0 2px 8px fade(@color-accent, 10%);
+
+// icon
+@icon-size: 24px;
+@icon-color: @color-accent;
+
+// 响应式断点
+@screen-xs: 375px;
+@screen-sm: 500px;
+@screen-md: 768px;
+@screen-lg: 1024px;
 
 body {
-  background: @main-bg;
-  color: @main-text;
+  background: @color-bg;
+  color: @color-text;
   font-family: "PingFang SC", "Hiragino Sans", "Arial", sans-serif;
+}
+
+// 全局按钮样式
+.btn,
+button,
+.taro-button {
+  border-radius: @btn-radius;
+  font-size: @btn-font-size;
+  padding: @btn-padding;
+  box-shadow: @btn-shadow;
+  border: none;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+// 全局icon样式
+.icon {
+  width: @icon-size;
+  height: @icon-size;
+  color: @icon-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 全局留白工具类
+.p-xs {
+  padding: @space-xs !important;
+}
+.p-sm {
+  padding: @space-sm !important;
+}
+.p-md {
+  padding: @space-md !important;
+}
+.p-lg {
+  padding: @space-lg !important;
+}
+.p-xl {
+  padding: @space-xl !important;
+}
+.m-xs {
+  margin: @space-xs !important;
+}
+.m-sm {
+  margin: @space-sm !important;
+}
+.m-md {
+  margin: @space-md !important;
+}
+.m-lg {
+  margin: @space-lg !important;
+}
+.m-xl {
+  margin: @space-xl !important;
+}
+
+// 响应式基础
+@media (max-width: @screen-sm) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: @screen-xs) {
+  html {
+    font-size: 13px;
+  }
+}
+
+// 动画
+@anim-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+@anim-normal: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+
+// 按钮点击缩放反馈
+.btn:active,
+button:active,
+.taro-button:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 4px fade(@color-accent, 8%);
+}
+
+// 卡片hover/点击阴影增强
+.wallpaper-card,
+.favorites-card {
+  transition: box-shadow @anim-fast, transform @anim-fast;
+}
+.wallpaper-card:active,
+.favorites-card:active,
+.wallpaper-card:hover,
+.favorites-card:hover {
+  box-shadow: 0 4px 24px fade(@color-accent, 18%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+// 心形icon点击弹跳动画
+.heart-anim {
+  animation: heart-bounce @anim-fast;
+}
+@keyframes heart-bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.25);
+  }
+  60% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 图片加载淡入
+.img-fadein {
+  opacity: 0;
+  animation: img-fadein @anim-normal forwards;
+}
+@keyframes img-fadein {
+  to {
+    opacity: 1;
+  }
+}
+
+// loading动画
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid fade(@color-accent, 30%);
+  border-top: 4px solid @color-accent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

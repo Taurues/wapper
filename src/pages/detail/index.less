@@ -33,7 +33,7 @@ detail-page {
 
 .wallpaper-time-hm {
   font-size: 36px;
-  color: @main-white;
+  color: @color-white;
   font-weight: bold;
   letter-spacing: 2px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
@@ -42,7 +42,7 @@ detail-page {
 .wallpaper-time-date {
   margin-top: 15px;
   font-size: 16px;
-  color: @main-white;
+  color: @color-white;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -60,13 +60,78 @@ detail-page {
 .set-btn,
 .fav-btn {
   background: rgba(255, 255, 255, 0.18);
-  color: @main-white;
+  color: @color-white;
   border: none;
   border-radius: 28px;
   font-size: 20px;
   font-weight: 600;
   padding: 0 44px;
   height: 56px;
-  box-shadow: 0 4px 16px fade(@main-accent, 10%);
+  box-shadow: 0 4px 16px fade(@color-accent, 10%);
   backdrop-filter: blur(2px);
+}
+
+.detail-actions-bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 24px;
+  z-index: 20;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 28px;
+  box-shadow: 0 4px 24px fade(@color-accent, 12%);
+  backdrop-filter: blur(12px);
+  padding: 8px 0 2px 0;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 2px;
+  transition: color 0.2s;
+}
+.action-btn:active {
+  transform: scale(0.95);
+}
+.action-label {
+  font-size: 13px;
+  color: @color-title;
+  margin-top: 2px;
+  letter-spacing: 1px;
+}
+.icon-star {
+  margin-bottom: 2px;
+}
+.icon-share {
+  margin-bottom: 2px;
+}
+.icon-download {
+  margin-bottom: 2px;
+}
+.icon-wallpaper {
+  margin-bottom: 2px;
+}
+
+.page-indicator {
+  position: fixed;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.18);
+  color: #fff;
+  font-size: 15px;
+  border-radius: 16px;
+  padding: 2px 16px;
+  z-index: 30;
+  font-weight: 500;
+  letter-spacing: 1px;
 }

@@ -1,9 +1,9 @@
 @import "../app.less";
 
 .wallpaper-card {
-  background: @main-white;
+  background: @color-white;
   border-radius: 16px;
-  box-shadow: 0 2px 12px fade(@main-accent, 10%);
+  box-shadow: 0 2px 12px fade(@color-accent, 10%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 .wallpaper-img-placeholder {
   width: 100%;
   aspect-ratio: 9 / 16;
-  background: linear-gradient(135deg, @main-accent 0%, @main-yellow 100%);
+  background: linear-gradient(135deg, @color-accent 0%, @color-yellow 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@
 
 .wallpaper-title {
   font-size: 16px;
-  color: @main-title;
+  color: @color-title;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -44,8 +44,8 @@
 }
 
 .fav-btn {
-  background: @main-yellow;
-  color: @main-accent;
+  background: @color-yellow;
+  color: @color-accent;
   border-radius: 16px;
   font-size: 14px;
   padding: 0 16px;
@@ -53,8 +53,8 @@
 }
 
 .set-btn {
-  background: @main-accent;
-  color: @main-white;
+  background: @color-accent;
+  color: @color-white;
   border-radius: 16px;
   font-size: 14px;
   padding: 0 16px;

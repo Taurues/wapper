@@ -2,7 +2,7 @@
 
 .favorites-page {
   min-height: 100vh;
-  background: @main-bg;
+  background: @color-bg;
   padding-bottom: 32px;
 }
 
@@ -11,17 +11,17 @@
   flex-direction: column;
   gap: 12px;
   padding: 24px 16px 8px 16px;
-  background: @main-white;
+  background: @color-white;
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 2px 8px fade(@main-accent, 6%);
+  box-shadow: 0 2px 8px fade(@color-accent, 6%);
 }
 
 .favorites-title {
   font-size: 22px;
   font-weight: bold;
-  color: @main-accent;
+  color: @color-accent;
   letter-spacing: 2px;
 }
 
@@ -33,27 +33,35 @@
 }
 
 .view-btn {
-  background: transparent;
+  background: @color-yellow;
+  color: @color-accent;
   border: none;
-  padding: 4px;
-  border-radius: 8px;
+  padding: 4px 16px;
+  border-radius: @btn-radius;
+  font-size: @btn-font-size;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: @btn-shadow;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   &.active {
-    background: @main-yellow;
+    background: @color-accent;
+    color: @color-white;
+    box-shadow: 0 4px 18px fade(@color-accent, 18%);
   }
 }
 
 .sort-select,
 .color-select {
-  background: @main-yellow;
-  color: @main-accent;
+  background: @color-yellow;
+  color: @color-accent;
   border: none;
-  border-radius: 16px;
-  font-size: 14px;
+  border-radius: @btn-radius;
+  font-size: @btn-font-size;
   padding: 4px 16px;
   margin-left: 4px;
+  box-shadow: @btn-shadow;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .favorites-content {
@@ -70,16 +78,16 @@
 }
 
 .favorites-card {
-  background: @main-white;
+  background: @color-white;
   border-radius: 18px;
-  box-shadow: 0 2px 12px fade(@main-accent, 8%);
+  box-shadow: 0 2px 12px fade(@color-accent, 8%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.2s;
   position: relative;
   &:hover {
-    box-shadow: 0 4px 24px fade(@main-accent, 16%);
+    box-shadow: 0 4px 24px fade(@color-accent, 16%);
   }
 }
 
@@ -87,7 +95,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1/1.2;
-  background: @main-yellow;
+  background: @color-yellow;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +120,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px fade(@main-accent, 10%);
+  box-shadow: 0 2px 8px fade(@color-accent, 10%);
 }
 
 .favorites-info {
@@ -131,7 +139,7 @@
 
 .favorites-title {
   font-size: 16px;
-  color: @main-title;
+  color: @color-title;
   font-weight: 600;
   flex: 1;
   overflow: hidden;
@@ -162,6 +170,6 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 2px solid @main-white;
-  box-shadow: 0 1px 4px fade(@main-accent, 10%);
+  border: 2px solid @color-white;
+  box-shadow: 0 1px 4px fade(@color-accent, 10%);
 }
