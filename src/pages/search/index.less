@@ -1,0 +1,82 @@
+@import "../../app.less";
+
+.search-page {
+  padding: 16px 12px 32px 12px;
+  background: @main-bg;
+  min-height: 100vh;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.search-input {
+  flex: 1;
+  height: 36px;
+  border-radius: 18px;
+  border: none;
+  background: @main-yellow;
+  padding: 0 16px;
+  font-size: 16px;
+  margin-right: 8px;
+}
+.search-btn {
+  background: @main-accent;
+  color: @main-white;
+  border-radius: 16px;
+  font-size: 14px;
+  padding: 0 16px;
+}
+
+.history-section {
+  margin-bottom: 24px;
+}
+.history-title {
+  font-size: 16px;
+  color: @main-title;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.history-item {
+  background: @main-yellow;
+  color: @main-title;
+  border-radius: 18px;
+  padding: 6px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px fade(@main-accent, 6%);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.history-item:hover {
+  background: @main-accent;
+  color: @main-white;
+  box-shadow: 0 2px 8px fade(@main-accent, 12%);
+}
+.history-empty {
+  color: #ccc;
+  font-size: 14px;
+}
+.clear-btn {
+  background: none;
+  color: #bbb;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 0;
+  text-decoration: underline;
+  box-shadow: none;
+}
+
+.wallpaper-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 12px;
+  margin-bottom: 16px;
+}

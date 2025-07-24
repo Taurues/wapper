@@ -1,0 +1,26 @@
+@import "../app.less";
+
+.category-tabs {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0 20px 0;
+  padding: 0 8px;
+}
+
+.tab-item {
+  padding: 8px 20px;
+  border-radius: 18px;
+  background: @main-pink;
+  color: @main-title;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-item.active {
+  background: linear-gradient(90deg, @main-yellow 0%, @main-accent 100%);
+  color: @main-accent;
+  font-weight: bold;
+  box-shadow: 0 2px 8px fade(@main-accent, 12%);
+}

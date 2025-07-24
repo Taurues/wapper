@@ -1,0 +1,49 @@
+@import "../app.less";
+
+.splash-mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: fade(@main-bg, 98%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.splash-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.splash-img {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, @main-accent 0%, @main-yellow 100%);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: @main-accent;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+.splash-close {
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  width: 32px;
+  height: 32px;
+  background: @main-white;
+  border-radius: 50%;
+  color: @main-accent;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px fade(@main-accent, 18%);
+  cursor: pointer;
+}
